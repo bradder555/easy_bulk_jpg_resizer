@@ -1,0 +1,1 @@
+# easy_bulk_jpg_resizer
