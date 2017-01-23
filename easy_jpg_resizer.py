@@ -51,7 +51,7 @@ if __name__ == '__main__':
     print("args:")
     print(args_dict)
 
-    real_input_path = os.path.realpath(os.path.join(os.getcwd(), args_dict['input_dir'], "*.jpg"))
+    real_input_path = os.path.realpath(os.path.join(os.getcwd(), args_dict['input_dir']))
     print("Input path: " + real_input_path)
 
     real_output_path = os.path.realpath(os.path.join(os.getcwd(), args_dict['output_dir']))
@@ -64,8 +64,12 @@ if __name__ == '__main__':
         args_dict['resize_quality'] = 1
 
     print("resize_quality: " + str(args_dict['resize_quality']))
-
-    list_of_files = glob.glob(real_input_path)
+    
+    list_of_files = []
+    
+    for e in ["jpg", "jpeg", "png", "bmp"]:
+        list_of_files.extend(glob.glob(real_input_path + "/*" + e))
+    
     print("list of files:")
     for file in list_of_files:
         file_name = os.path.split(file)[1]
