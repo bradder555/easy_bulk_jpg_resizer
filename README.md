@@ -19,3 +19,7 @@ or for help
 ```
 python easy_jpg_resizer.py -h
 ```
+# Todo:
+* build a gui using pyqt5
+* have a cx_freeze build
+* include png, bmp and jpeg files
