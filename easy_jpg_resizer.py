@@ -2,30 +2,17 @@
 
 from PIL import Image
 from PIL import ExifTags
-from resizeimage import resizeimage
+
 import sys
 import os
-import inspect
 import glob
 
-# realpath() will make your script run, even if you symlink it :)
-cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
-if cmd_folder not in sys.path:
-    sys.path.insert(0, cmd_folder)
-
-# use this if you want to include modules from a subfolder
-cmd_subfolder = os.path.realpath(
-    os.path.abspath(os.path.join(os.path.split(inspect.getfile(inspect.currentframe()))[0], "easy_arg_parse")))
-
-if cmd_subfolder not in sys.path:
-    sys.path.insert(0, cmd_subfolder)
-
-from easy_arg_parse import EasyArgParse
+from easy_arg_parse import easy_arg_parse
 
 CURRENT_WORKING_DIR = os.getcwd()
 
 if __name__ == '__main__':
-    eap = EasyArgParse\
+    eap = easy_arg_parse.EasyArgParse\
             (
                 defined_args=
                 {
